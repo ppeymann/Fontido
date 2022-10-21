@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --swiper-theme-color: #04ff00 !important;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #454545;
+}
+@font-face {
+  font-family: "pinar-medium";
+  src: url(./fonts//پینار/Statics/Pinar-DS2-Medium.ttf);
+  font-weight: 600;
+}
+@font-face {
+  font-family: "pinar-bold";
+  src: url(./fonts//پینار/Statics/Pinar-DS2-Bold.ttf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: "pinar-light";
+  src: url(./fonts//پینار/Statics/Pinar-DS2-Light.ttf);
+  font-weight: 500;
+}
+.swiper-pagination-bullet-active {
+  color: #33bc31 !important;
 }
