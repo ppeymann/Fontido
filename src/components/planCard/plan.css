@@ -1,4 +1,4 @@
-.placCard {
+.planCard {
   background-color: #fff;
   width: 320px;
   height: 480px;
@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
 }
-.placCard-in {
+.planCard-in {
   width: 280px;
   height: 420px;
   background-color: #fff;
@@ -16,7 +16,7 @@
   border-radius: 10px;
   position: relative;
 }
-.placCard-logo {
+.planCard-logo {
   background-color: #69ff23;
   width: 40px;
   height: 35px;
@@ -27,43 +27,43 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.placeCard-info h2 {
+.planeCard-info h2 {
   font-size: 18px;
   font-family: "pinar-bold";
   text-align: center;
   margin-top: 3rem;
 }
-.placCard-video {
+.planCard-video {
   display: flex;
   align-items: center;
   margin-top: 2rem;
   padding-right: 2rem;
   gap: 1rem;
 }
-.placCard-video__icon {
+.planCard-video__icon {
   width: 18px;
   height: 18px;
 }
-.placCard-video__text {
+.planCard-video__text {
   font-family: "pinar-medium";
   font-size: 11px;
 }
-.placCard-cover {
+.planCard-cover {
   display: flex;
   align-items: center;
   margin-top: 0.5rem;
   padding: 0 2rem;
   gap: 1rem;
 }
-.placCard-cover__icon {
+.planCard-cover__icon {
   width: 18px;
   height: 18px;
 }
-.placCard-cover__text {
+.planCard-cover__text {
   font-family: "pinar-medium";
   font-size: 11px;
 }
-.placCard-descrip {
+.planCard-descrip {
   padding: 0 1rem;
   margin-top: 2rem;
   font-family: "pinar-medium";
@@ -87,7 +87,7 @@
 .price-text {
   font-family: "pinar-bold";
 }
-.placCard-buy {
+.planCard-buy {
   display: flex;
   justify-content: space-evenly;
   margin-top: 2rem;

@@ -6,21 +6,21 @@ import bascket from "../../assets/Group 8749.png";
 const PlanCard = (item) => {
   const { id, title, video, image, descroption, price } = item.item;
   return (
-    <div className="placCard">
-      <div className="placCard-in">
-        <div className="placCard-logo"></div>
-        <div className="placeCard-info">
+    <div className="planCard">
+      <div className="planCard-in">
+        <div className="planCard-logo"></div>
+        <div className="planeCard-info">
           <h2>{title}</h2>
-          <div className="placCard-video">
-            <img src={videoIcon} alt="" className="placCard-video__icon" />
-            <p className="placCard-video__text">{video}</p>
+          <div className="planCard-video">
+            <img src={videoIcon} alt="" className="planCard-video__icon" />
+            <p className="planCard-video__text">{video}</p>
           </div>
-          <div className="placCard-cover">
-            <img src={imageIcon} alt="" className="placCard-cover__icon" />
-            <p className="placCard-cover__text">{image}</p>
+          <div className="planCard-cover">
+            <img src={imageIcon} alt="" className="planCard-cover__icon" />
+            <p className="planCard-cover__text">{image}</p>
           </div>
-          <div className="placCard-descrip">{descroption}</div>
-          <div className="placCard-buy">
+          <div className="planCard-descrip">{descroption}</div>
+          <div className="planCard-buy">
             <button className="buying-btn">
               <img src={bascket} alt="buy" className="buying-btn__icon" />
               خرید این پلن
