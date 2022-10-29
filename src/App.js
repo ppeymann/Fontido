@@ -5,6 +5,7 @@ import Register from "./components/register/Register";
 import Home from "./pages/Home/Home.js";
 import Video from "./pages/video/Video";
 import SubPage from "./pages/sub/Sub";
+import Account from "./pages/account/Account";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/video" element={<Video />} />
         <Route path="/login" element={<Register />} />
         <Route path="/sub" element={<SubPage />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </div>
   );

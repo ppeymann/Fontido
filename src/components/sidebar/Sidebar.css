@@ -2,7 +2,7 @@
   position: absolute;
   width: 132px;
   height: 280px;
-  margin: 250px 64px 0 72px;
+  margin: 0 64px 0 72px;
 }
 .side-container {
   display: flex;
@@ -21,6 +21,9 @@
   font-family: "pinar-bold";
   font-weight: 900;
   color: #4a72fe !important;
+}
+.side-menu-list {
+  list-style: none;
 }
 
 /* media queries */
