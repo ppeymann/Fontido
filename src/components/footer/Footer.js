@@ -6,6 +6,7 @@ import "./footer.css";
 const Footer = () => {
   return (
     <div className="footer">
+      s
       <Grid container>
         <Grid item xs={12} lg={6}>
           <h3 className="footer-right__title">درباره فونتیدو</h3>

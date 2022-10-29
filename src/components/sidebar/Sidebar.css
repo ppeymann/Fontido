@@ -1,0 +1,31 @@
+.sidebar {
+  position: absolute;
+  width: 132px;
+  height: 280px;
+  margin: 250px 64px 0 72px;
+}
+.side-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-list p {
+  font-family: "pinar-medium";
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 37.78px;
+  color: #273b4a;
+}
+
+.click p {
+  font-family: "pinar-bold";
+  font-weight: 900;
+  color: #4a72fe !important;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
