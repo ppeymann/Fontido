@@ -2,7 +2,7 @@
   background-color: #fff;
   width: 320px;
   height: 480px;
-  /* box-shadow: 0px 4px 65px rgba(111, 110, 110, 0.19); */
+  box-shadow: 0px 2px 64px rgba(111, 110, 110, 0.19);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -91,4 +91,12 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 2rem;
+}
+@media screen and (max-width: 500px) {
+  .planCard {
+    width: 290px;
+  }
+  .planCard-in {
+    width: 250px;
+  }
 }

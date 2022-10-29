@@ -1,0 +1,30 @@
+.planPage {
+  margin: 100px 255px 100px 74px;
+}
+.planPage-plan__swiper {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .planPage-plan__swiper {
+    display: block;
+  }
+  .planPage-grid__container {
+    display: none;
+  }
+  .planPage {
+    margin: 50px 50px 100px 74px;
+  }
+  .mySwiper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 769px) {
+}
+@media screen and (max-width: 400px) {
+  .planPage {
+    margin: 50px 0 100px;
+  }
+}
