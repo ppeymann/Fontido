@@ -19,8 +19,8 @@
 .middle-clm {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 35px 0;
+  justify-content: space-evenly;
+  padding: 50px 0;
 }
 
 @media screen and (max-width: 768px) {

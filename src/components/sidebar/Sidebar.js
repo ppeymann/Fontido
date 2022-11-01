@@ -19,14 +19,7 @@ const Sidebar = () => {
                 <p>حساب کاربری</p>
               </Link>
             </li>
-            <li className="side-item">
-              <Link
-                to="/planbuy"
-                className={pathname === "/planbuy" ? "click" : ""}
-              >
-                <p>خرید پلن</p>
-              </Link>
-            </li>
+
             <li className="side-item">
               <Link
                 to="/PurchaceHistory"

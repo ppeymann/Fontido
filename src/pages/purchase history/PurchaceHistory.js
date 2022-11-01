@@ -4,6 +4,8 @@ import { server } from "../../server/server";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Support from "../../components/Support and Settings/Support";
 import "../purchase history/PurchaseHistory.css";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
 
 const PurchaceHistory = () => {
   let info = server;
@@ -51,9 +53,11 @@ const PurchaceHistory = () => {
 const PurchaceHistorys = () => {
   return (
     <>
+      <Navbar />
       <Support />
       <Sidebar />
       <PurchaceHistory />
+      <Footer />
     </>
   );
 };

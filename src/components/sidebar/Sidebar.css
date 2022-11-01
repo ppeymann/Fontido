@@ -12,14 +12,11 @@
 .side-menu-list p {
   font-family: "pinar-medium";
   font-size: 18px;
-  font-weight: 600;
   line-height: 37.78px;
   color: #273b4a;
 }
 
 .click p {
-  font-family: "pinar-bold";
-  font-weight: 900;
   color: #4a72fe !important;
 }
 .side-menu-list {

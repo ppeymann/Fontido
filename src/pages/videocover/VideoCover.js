@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../../components/footer/Footer";
+import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Support from "../../components/Support and Settings/Support";
 import "../videocover/videocover.css";
@@ -31,9 +33,11 @@ const VideoCover = () => {
 const VideoCovers = () => {
   return (
     <>
+      <Navbar />
       <Support />
       <Sidebar />
       <VideoCover />
+      <Footer />
     </>
   );
 };

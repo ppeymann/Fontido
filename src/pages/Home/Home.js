@@ -42,10 +42,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      {/* <HomePage /> */}
-      {/* <Account /> */}
-      {/* <PurchaceHistorys /> */}
-      <VideoCovers />
+      <HomePage />
       <Footer />
     </>
   );
