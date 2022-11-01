@@ -5,6 +5,9 @@ import topImg from "../../assets/Group 37.png";
 import midImg from "../../assets/ابعاد سایز های یک سایت.png";
 import botImg from "../../assets/صفحه اصلی پایین.png";
 import Footer from "../../components/footer/Footer";
+import Account from "../account/Account";
+import PurchaceHistorys from "../purchase history/PurchaceHistory";
+import VideoCovers from "../videocover/VideoCover";
 
 const HomePage = () => {
   return (
