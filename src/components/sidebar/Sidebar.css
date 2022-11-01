@@ -2,7 +2,7 @@
   position: absolute;
   width: 132px;
   height: 280px;
-  margin: 0 64px 0 72px;
+  margin: 15px 64px 0 72px;
 }
 .side-container {
   display: flex;
@@ -27,7 +27,15 @@
 }
 
 /* media queries */
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1200px) {
+  .side-menu-list p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .sidebar {
     display: none;
   }
