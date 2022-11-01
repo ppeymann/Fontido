@@ -1,0 +1,43 @@
+.PurchaceHistory {
+  margin: 120px 255px 100px 74px;
+}
+
+.clm {
+  font-family: "pinar-medium";
+  font-size: 17px;
+  color: rgba(35, 35, 35, 0.5);
+}
+.clm-item {
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .PurchaceHistory {
+    margin-right: 200px;
+  }
+  .clm {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .PurchaceHistory {
+    margin-right: 64px;
+  }
+
+  .clm {
+    font-size: 6px;
+  }
+  .ph-container {
+    flex-wrap: nowrap;
+  }
+}
+@media screen and (max-width: 360px) {
+  .clm {
+    font-size: 7px;
+    line-height: 12px;
+  }
+  .ph-container {
+    flex-wrap: nowrap;
+  }
+}

@@ -1,55 +1,51 @@
 .account {
-  /* background-color: rgb(234, 124, 124); */
   margin: 150px 255px 100px 74px;
-  display: flex;
-  flex-direction: column;
 }
-.account .top-main {
-  display: flex;
+.acc-top {
+  font-family: "pinar-bold";
+  color: #273b4a;
 }
-.account .top-main span {
-  display: flex;
-  align-items: center;
-  border: 1px solid #efefef;
-  width: 300px;
-  height: 55px;
-  margin-left: 13px;
-  background-color: #ffffff;
+.acc-input {
   border: 1px solid #efefef;
   box-shadow: 0px 4px 20px rgba(222, 220, 220, 0.1);
   border-radius: 10px;
+  padding: 0.5rem;
 }
-.account .top-main span p {
-  font-family: "pinar-medium";
-  font-size: 18px;
-  line-height: 38px;
-  text-align: right;
-  color: #273b4a;
+.acc-bot {
+  border: 2px dashed #273b4a;
+  padding: 1.5rem 0;
+  border-radius: 20px;
 }
-.account .bottom-main {
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  margin-top: 30px;
-  padding: 30px 30px;
-  border: 2px dashed #000000;
-  border-radius: 40px;
-}
-.account .bottom-main span {
+.bot-item {
   display: flex;
   align-items: center;
-  padding-left: 120px;
-}
-.account .bottom-main span p {
+  gap: 0.5rem;
   font-family: "pinar-bold";
-  font-weight: 900;
-  font-size: 18px;
-  line-height: 38px;
-  text-align: right;
+  font-size: 15px;
   color: #273b4a;
 }
-.account .bottom-main span img {
-  width: 45px;
-  height: 40px;
-  margin-left: 10px;
+.acc-img {
+  width: 25px;
+}
+@media screen and (max-width: 1200px) {
+  .acc-input {
+    font-size: 12px;
+  }
+  .bot-item {
+    font-size: 12px;
+  }
+  .acc-img {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .account {
+    margin-top: 80px;
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .acc-bot {
+    border: none;
+  }
 }

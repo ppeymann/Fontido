@@ -29,8 +29,8 @@ const Sidebar = () => {
             </li>
             <li className="side-item">
               <Link
-                to="/historybuy"
-                className={pathname === "/historybuy" ? "click" : ""}
+                to="/PurchaceHistory"
+                className={pathname === "/PurchaceHistory" ? "click" : ""}
               >
                 <p>تاریخچه خرید</p>
               </Link>
