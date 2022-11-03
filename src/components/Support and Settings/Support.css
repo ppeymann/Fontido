@@ -19,12 +19,12 @@
 }
 .support-container .support img {
   width: 25px;
-  height: 25px;
+
   margin-left: 15px;
 }
 .support-container .settings img {
   width: 25px;
-  height: 25px;
+
   margin-left: 15px;
 }
 .support-container .line {
@@ -36,12 +36,10 @@
 @media screen and (max-width: 769px) {
   .support-container .support img {
     width: 12;
-    height: 12px;
     margin-left: 12px;
   }
   .support-container .settings img {
     width: 12px;
-    height: 12px;
     margin-left: 12px;
   }
   .support-container .support,
@@ -54,24 +52,16 @@
     margin: 0 10px;
     border: 1px solid #c6b3b3;
     height: 34px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .support-container {
-    display: none;
   }
 }
 
 @media screen and (max-width: 769px) {
   .support-container .support img {
-    width: 12;
-    height: 12px;
+    width: 18px;
     margin-left: 12px;
   }
   .support-container .settings img {
-    width: 12px;
-    height: 12px;
+    width: 18px;
     margin-left: 12px;
   }
   .support-container .support,
@@ -84,11 +74,5 @@
     margin: 0 10px;
     border: 1px solid #c6b3b3;
     height: 34px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .support-container {
-    display: none;
   }
 }

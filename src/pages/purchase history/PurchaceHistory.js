@@ -13,36 +13,31 @@ const PurchaceHistory = () => {
   return (
     <div className="PurchaceHistory">
       {info.map((item) => (
-        <Grid
-          container
-          className="ph-container"
-          gap={2}
-          justifyContent="space-between"
-        >
+        <Grid container className="ph-container" gap={2}>
           <Grid className="clm" item>
             <Grid item className="clm-item">
               {item.title}
             </Grid>
           </Grid>
 
-          <Grid className="clm" item>
+          <Grid className="clm clm_respon" item>
             <Grid>{item.video}</Grid>
           </Grid>
 
-          <Grid className="clm" item>
+          <Grid className="clm clm_respon" item>
             <Grid>{item.image}</Grid>
           </Grid>
 
-          <Grid className="clm" item>
+          <Grid className="clm " item>
             <Grid>{item.date}</Grid>
           </Grid>
 
-          <Grid className="clm" item>
+          <Grid className="clm clm_respon" item>
             <Grid>{item.time}</Grid>
           </Grid>
 
           <Grid className="clm" item>
-            <Grid>{item.price}</Grid>
+            <Grid>{item.price}تومان</Grid>
           </Grid>
         </Grid>
       ))}
