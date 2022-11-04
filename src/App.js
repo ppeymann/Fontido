@@ -8,19 +8,23 @@ import SubPage from "./pages/sub/Sub";
 import Account from "./pages/account/Account";
 import PurchaceHistorys from "./pages/purchase history/PurchaceHistory";
 import VideoCovers from "./pages/videocover/VideoCover";
+import Supporting from "./pages/supporting/Supporting";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/story" element={<Story />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/login" element={<Register />} />
-        <Route path="/sub" element={<SubPage />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/PurchaceHistory" element={<PurchaceHistorys />} />
-        <Route path="/freevc" element={<VideoCovers />} />
+        <Route index element={<Home />} />
+        <Route path="story" element={<Story />} />
+        <Route path="video" element={<Video />} />
+        <Route path="login" element={<Register />} />
+        <Route path="sub" element={<SubPage />} />
+        <Route path="account">
+          <Route path="user" element={<Account />} />
+          <Route path="purchace" element={<PurchaceHistorys />} />
+          <Route path="freeVideocover" element={<VideoCovers />} />
+          <Route path="supporting" element={<Supporting />} />
+        </Route>
       </Routes>
     </div>
   );

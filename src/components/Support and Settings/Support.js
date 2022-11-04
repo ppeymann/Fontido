@@ -9,14 +9,14 @@ const Support = () => {
   return (
     <div className="main">
       <div className="support-container">
-        <Link to="/" className="support">
+        <Link to="/account/supporting" className="support">
           <img src={supportIcon} />
           <p>پشتیبانی</p>
         </Link>
 
         <span className="line"></span>
 
-        <Link to="/" className="settings">
+        <Link to="/account/setting" className="settings">
           <img src={settingsIcon} />
           <p>تنظیمات</p>
         </Link>

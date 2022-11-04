@@ -13,8 +13,8 @@ const Sidebar = () => {
           <ul className="side-menu-list">
             <li className="side-item">
               <Link
-                to="/account"
-                className={pathname === "/account" ? "click" : ""}
+                to="/account/user"
+                className={pathname === "/account/user" ? "click" : ""}
               >
                 <p>حساب کاربری</p>
               </Link>
@@ -22,16 +22,18 @@ const Sidebar = () => {
 
             <li className="side-item">
               <Link
-                to="/PurchaceHistory"
-                className={pathname === "/PurchaceHistory" ? "click" : ""}
+                to="/account/purchace"
+                className={pathname === "/account/purchace" ? "click" : ""}
               >
                 <p>تاریخچه خرید</p>
               </Link>
             </li>
             <li className="side-item">
               <Link
-                to="/freevc"
-                className={pathname === "/freevc" ? "click" : ""}
+                to="/account/freeVideocover"
+                className={
+                  pathname === "/account/freeVideocover" ? "click" : ""
+                }
               >
                 <p>ویدیو و کاور رایگان</p>
               </Link>

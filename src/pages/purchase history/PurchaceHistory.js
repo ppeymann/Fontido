@@ -9,7 +9,6 @@ import Footer from "../../components/footer/Footer";
 
 const PurchaceHistory = () => {
   let info = server;
-  console.log(info);
   return (
     <div className="PurchaceHistory">
       {info.map((item) => (
