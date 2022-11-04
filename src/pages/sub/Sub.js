@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
+
 //sub body
 
 const Sub = () => {

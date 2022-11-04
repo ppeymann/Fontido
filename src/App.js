@@ -9,6 +9,7 @@ import Account from "./pages/account/Account";
 import PurchaceHistorys from "./pages/purchase history/PurchaceHistory";
 import VideoCovers from "./pages/videocover/VideoCover";
 import Supporting from "./pages/supporting/Supporting";
+import Notif from "./admin/notif/Notif";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           <Route path="purchace" element={<PurchaceHistorys />} />
           <Route path="freeVideocover" element={<VideoCovers />} />
           <Route path="supporting" element={<Supporting />} />
+        </Route>
+        <Route path="admin">
+          <Route path="notif" element={<Notif />} />
         </Route>
       </Routes>
     </div>
