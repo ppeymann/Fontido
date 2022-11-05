@@ -9,7 +9,8 @@ import Account from "./pages/account/Account";
 import PurchaceHistorys from "./pages/purchase history/PurchaceHistory";
 import VideoCovers from "./pages/videocover/VideoCover";
 import Supporting from "./pages/supporting/Supporting";
-import Notif from "./admin/notif/Notif";
+import AdminLogin from "./admin/adminLogin/AdminLogin";
+import AdminForget from "./admin/adminForgetPass/AdminForget";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
           <Route path="supporting" element={<Supporting />} />
         </Route>
         <Route path="admin">
-          <Route path="notif" element={<Notif />} />
+          <Route path="login" element={<AdminLogin />} />
+          <Route path="forget" element={<AdminForget />} />
         </Route>
       </Routes>
     </div>
