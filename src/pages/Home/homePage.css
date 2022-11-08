@@ -3,7 +3,7 @@
   width: 100%;
 }
 .home-page__title {
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
   font-size: 30px;
   color: #454545;
   text-align: center;
@@ -45,13 +45,13 @@
   width: 500px;
 }
 .bot-text h4 {
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
 }
 .bot-text h4 span {
   color: #ff6a6a;
 }
 .bot-text p {
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 @media screen and (max-width: 1000px) {
   .bot-img {

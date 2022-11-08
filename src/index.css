@@ -16,13 +16,13 @@ ul {
 }
 
 @font-face {
-  font-family: "pinar-medium";
-  src: url(./fonts//پینار/Statics/Pinar-DS2-Medium.ttf);
+  font-family: "iranYekan-medium";
+  src: url(./fonts/iranYekan/IRANYekanMedium.ttf);
   font-weight: 600;
 }
 @font-face {
-  font-family: "pinar-bold";
-  src: url(./fonts//پینار/Statics/Pinar-DS2-Bold.ttf);
+  font-family: "iranYekan-bold";
+  src: url(./fonts/iranYekan/IRANYekanBold.ttf);
   font-weight: 900;
 }
 @font-face {

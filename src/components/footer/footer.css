@@ -5,13 +5,13 @@
   font-size: 20px;
 }
 .footer h3 {
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
 }
 .footer-left__title {
   text-align: left;
 }
 .footer-right__text {
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 .footer-left__img {
   display: flex;
@@ -20,7 +20,7 @@
   margin-right: 10rem;
 }
 .copy-right {
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
   margin-top: 70px;
   text-align: center;
   font-size: 18px;

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
 }
 .adminForget-container {
   display: flex;
@@ -25,7 +25,7 @@
   background-color: transparent;
   border: none;
   outline: none;
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
   color: #2f50ff;
   cursor: pointer;
   font-size: 16px;
@@ -45,7 +45,7 @@
 .adminForget-btn {
   background-color: #8976bb;
   color: #fff;
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
   border: none;
   border-radius: 10px;
   padding: 0.5rem 3.5rem;

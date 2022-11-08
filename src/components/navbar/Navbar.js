@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import SortIcon from "@mui/icons-material/Sort";
+import { useToken } from "../../auth/useToken/useToken";
 import "./navbar.css";
+import axios from "axios";
 
 const Navbar = () => {
   const { pathname } = useLocation();
+
+  const [token] = useToken();
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("https://amirhosseinkarami.ir/api/UserPanel/GetUserInformation", {
+        headers: { authorization: `Bearer ${token}` },
+      })
+      .then((res) => setData(res.data));
+  }, []);
 
   return (
     <div className="navbar">
@@ -46,8 +59,8 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <Link to="/login" className="nav-login">
-          <p className="login-text">ورود</p>
+        <Link to={token ? "/account/user" : "/login"} className="nav-login">
+          <p className="login-text">{token ? data.userName : "ورود"}</p>
           <PermIdentityIcon />
         </Link>
         <div className="hambergur-menu">

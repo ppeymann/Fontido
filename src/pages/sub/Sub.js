@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import subImg from "../../assets/sub-image.png";
 import "./sub.css";
-import { server } from "../../server/server";
 import PlanCard from "../../components/planCard/PlanCard";
 import Footer from "../../components/footer/Footer";
 import { Swiper, SwiperSlide } from "swiper/react";

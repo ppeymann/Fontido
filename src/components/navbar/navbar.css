@@ -13,7 +13,7 @@
   display: flex;
   list-style: none;
   justify-content: flex-start;
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 .nav-menu-list li {
   margin-left: 4rem;
@@ -31,7 +31,7 @@
   color: #000;
 }
 .title a {
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
   text-decoration: none;
   font-size: 30px;
   color: #50c85c;
@@ -44,13 +44,13 @@
 .nav-login a {
   text-decoration: none;
   color: #454545;
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 .hambergur-menu {
   display: none;
 }
 .login-text {
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 @media screen and (max-width: 1000px) {
   .navbar {

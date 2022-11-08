@@ -22,7 +22,6 @@ const Login = () => {
     const { token } = response.data;
     setToken(token);
     navigate("/account/user");
-    console.log(token);
   };
 
   return (

@@ -10,7 +10,7 @@
   width: 35rem;
   padding: 2rem 1rem;
   border-radius: 10px;
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
   box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
 }
 .sup-inputs__btn {
@@ -22,13 +22,13 @@
   outline: none;
   padding: 0.5rem 1rem;
   border-radius: 10px;
-  font-family: "pinar-medium";
+  font-family: "iranYekan-medium";
 }
 .topic {
   padding: 1rem;
 }
 .answer {
-  font-family: "pinar-bold";
+  font-family: "iranYekan-bold";
   padding-right: 5rem;
   color: #454545;
 }

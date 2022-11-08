@@ -1,8 +1,28 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useToken } from "../../auth/useToken/useToken";
 import "./adminLogin.css";
+import axios from "axios";
 
 const AdminLogin = () => {
+  const [mobilePhone, setMobilePhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [token, setToken] = useToken();
+  const navigate = useNavigate();
+  const loginAdmin = async () => {
+    const response = await axios.post(
+      "https://amirhosseinkarami.ir/api/Admin/Account/LoginPanel",
+      {
+        mobilePhone: mobilePhone,
+        password: password,
+      }
+    );
+    const { token } = response.data;
+    setToken(token);
+    navigate("/");
+    console.log(token);
+  };
+
   return (
     <div className="adminLogin">
       <div className="adminLogin-container">
@@ -17,7 +37,12 @@ const AdminLogin = () => {
             >
               نام کاربری
             </label>
-            <input type="text" id="adminLogin-input__username" />
+            <input
+              value={mobilePhone}
+              onChange={(e) => setMobilePhone(e.target.value)}
+              type="text"
+              id="adminLogin-input__username"
+            />
           </div>
           <div className="adminLogin-password">
             <label
@@ -26,11 +51,18 @@ const AdminLogin = () => {
             >
               رمز عبور
             </label>
-            <input type="password" id="adminLogin-input__password" />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              id="adminLogin-input__password"
+            />
           </div>
         </div>
         <div className="adminLogin-btns">
-          <button className="adminLogin-btn__enter">ورود</button>
+          <button onClick={loginAdmin} className="adminLogin-btn__enter">
+            ورود
+          </button>
           <Link to="/admin/forget" className="adminLogin-btn__forget">
             فراموشی رمز عبور
           </Link>
