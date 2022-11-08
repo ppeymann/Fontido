@@ -11,6 +11,8 @@ import VideoCovers from "./pages/videocover/VideoCover";
 import Supporting from "./pages/supporting/Supporting";
 import AdminLogin from "./admin/adminLogin/AdminLogin";
 import AdminForget from "./admin/adminForgetPass/AdminForget";
+import Login from "./components/login/Login";
+import { UserRoute } from "./auth/userRoute/UserRoute";
 
 function App() {
   return (
@@ -19,13 +21,42 @@ function App() {
         <Route index element={<Home />} />
         <Route path="story" element={<Story />} />
         <Route path="video" element={<Video />} />
-        <Route path="login" element={<Register />} />
+        <Route path="register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="sub" element={<SubPage />} />
         <Route path="account">
-          <Route path="user" element={<Account />} />
-          <Route path="purchace" element={<PurchaceHistorys />} />
-          <Route path="freeVideocover" element={<VideoCovers />} />
-          <Route path="supporting" element={<Supporting />} />
+          <Route
+            path="user"
+            element={
+              <UserRoute>
+                <Account />
+              </UserRoute>
+            }
+          />
+          <Route
+            path="purchace"
+            element={
+              <UserRoute>
+                <PurchaceHistorys />
+              </UserRoute>
+            }
+          />
+          <Route
+            path="freeVideocover"
+            element={
+              <UserRoute>
+                <VideoCovers />
+              </UserRoute>
+            }
+          />
+          <Route
+            path="supporting"
+            element={
+              <UserRoute>
+                <Supporting />
+              </UserRoute>
+            }
+          />
         </Route>
         <Route path="admin">
           <Route path="login" element={<AdminLogin />} />
