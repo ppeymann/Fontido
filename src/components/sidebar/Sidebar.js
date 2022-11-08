@@ -38,7 +38,10 @@ const Sidebar = () => {
                 <p>ویدیو و کاور رایگان</p>
               </Link>
             </li>
-            <li className="side-item">
+            <li
+              onClick={() => localStorage.removeItem("token")}
+              className="side-item"
+            >
               <Link to="/">
                 <p>خروج</p>
               </Link>

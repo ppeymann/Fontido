@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./Acount.css";
+
+import { useUser } from "../../auth/useUser/useUser";
+import { useToken } from "../../auth/useToken/useToken";
 
 import planIcon from "../../assets/Vector 76.png";
 import videoIcon from "../../assets/Group 8747.png";
 import coverIcon from "../../assets/Group 8748.png";
-import { Route, Routes } from "react-router-dom";
+import axios from "axios";
 import Support from "../../components/Support and Settings/Support";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
@@ -13,6 +16,18 @@ import Footer from "../../components/footer/Footer";
 import { Grid } from "@mui/material";
 
 const Account = () => {
+  const user = useUser();
+  const [token, setToken] = useToken();
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    const res = axios
+      .get("https://amirhosseinkarami.ir/api/UserPanel/GetUserInformation", {
+        headers: { authorization: `Bearer ${token}` },
+      })
+      .then((res) => setData(res.data));
+  }, []);
+
   return (
     <div className="account">
       <Grid
@@ -23,13 +38,13 @@ const Account = () => {
         className="acc-top"
       >
         <Grid item xs={12} md={3.5} className="acc-fullName acc-input">
-          نام و نام خانوادگی:
+          نام و نام خانوادگی:{data.userName ? ` ${data.userName}` : ""}
         </Grid>
         <Grid item xs={12} md={3.5} className="acc-email acc-input">
           ایمیل شما:
         </Grid>
         <Grid item xs={12} md={3.5} className="acc-phoneNum acc-input">
-          شماره همراه شما:
+          شماره همراه : {data.mobilePhone ? `    ${data.mobilePhone}` : ""}
         </Grid>
       </Grid>
       <Grid
