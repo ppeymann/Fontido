@@ -10,10 +10,19 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
+import axios from "axios";
 
 //sub body
 
 const Sub = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const res = axios
+      .get("https://amirhosseinkarami.ir/api/Plan/GetPlans")
+      .then((res) => setData(res.data));
+  }, []);
+  console.log(data);
   return (
     <div className="sub">
       <div className="sub-top">
@@ -29,9 +38,7 @@ const Sub = () => {
         </div>
       </div>
       <div className="sub-plan__desc">
-        {server.map((item) => (
-          <PlanCard key={item.id} item={item} />
-        ))}
+        {data && data.map((item) => <PlanCard key={item.planId} item={item} />)}
       </div>
       <div className="sub-plan__swiper swiper-lazy-preloader">
         <Swiper
@@ -40,7 +47,6 @@ const Sub = () => {
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
           className="mySwiper"
           breakpoints={{
             700: {
@@ -50,11 +56,12 @@ const Sub = () => {
           }}
           loop={Infinity}
         >
-          {server.map((item) => (
-            <SwiperSlide>
-              <PlanCard key={item.id} item={item} />
-            </SwiperSlide>
-          ))}
+          {data &&
+            data.map((item) => (
+              <SwiperSlide>
+                <PlanCard key={item.id} item={item} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>
