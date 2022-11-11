@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import SortIcon from "@mui/icons-material/Sort";
 import { useToken } from "../../auth/useToken/useToken";
 import "./navbar.css";
 import axios from "axios";
 
+import logo from "../../assets/logo.png";
+import polygon from "../../assets/Polygon 17.png";
+
 const Navbar = () => {
   const { pathname } = useLocation();
 
   const [token] = useToken();
   const [data, setData] = useState({});
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     axios
@@ -23,6 +27,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
+        <img src={logo} alt="logo" className="navbar-logo" />
         <h2 className="title">
           <Link to="/">فونتیدو</Link>
         </h2>
@@ -59,10 +64,52 @@ const Navbar = () => {
             </li>
           </ul>
         </nav>
-        <Link to={token ? "/account/user" : "/login"} className="nav-login">
-          <p className="login-text">{token ? data.userName : "ورود"}</p>
-          <PermIdentityIcon />
-        </Link>
+        <div className="nav-login__container" onClick={() => setShow(!show)}>
+          <Link to={!token && "/login"} className="nav-login">
+            <Link to="/account/user" className="login-text">
+              {token ? data.userName : "ورود"}
+            </Link>
+            <PermIdentityIcon />
+          </Link>
+          {token && (
+            <div className="navbar-submenu__container">
+              <img
+                src={polygon}
+                alt="polygon"
+                className={!show ? "nav-submenu__arrow" : "arrow-active"}
+              />
+              <div className={!show ? "navbar-submenu" : "submenu-active"}>
+                <ul className="navbar-submenu__menu">
+                  <li
+                    onClick={() => setShow(false)}
+                    className="navbar-submenu__item"
+                  >
+                    <Link to="/account/user">حساب کاربری</Link>
+                  </li>
+                  <li
+                    onClick={() => setShow(false)}
+                    className="navbar-submenu__item"
+                  >
+                    <Link to="/account/purchace">تاریخچه خرید</Link>
+                  </li>
+                  <li
+                    onClick={() => setShow(false)}
+                    className="navbar-submenu__item"
+                  >
+                    <Link to="/account/freeVideocover">کاور رایگان</Link>
+                  </li>
+                  <li
+                    onClick={() => localStorage.removeItem("token")}
+                    className="navbar-submenu__item"
+                  >
+                    <Link to="/">خروج</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="hambergur-menu">
           <SortIcon />
         </div>

@@ -6,8 +6,16 @@
   justify-content: space-between;
   align-items: center;
 }
+.navbar-logo {
+  width: 40px;
+  padding-top: 8px;
+}
+.title {
+  margin-left: 9px;
+}
 .nav-menu {
   width: 80%;
+  margin-top: 0.5rem;
 }
 .nav-menu-list {
   display: flex;
@@ -37,6 +45,7 @@
   color: #50c85c;
 }
 .nav-login {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -52,9 +61,39 @@
 .login-text {
   font-family: "iranYekan-medium";
 }
-@media screen and (max-width: 1000px) {
+.navbar-submenu {
+  display: none;
+}
+
+.nav-submenu__arrow {
+  display: none;
+}
+
+.navbar-submenu__item {
+  padding: 0.5rem 0;
+}
+.navbar-submenu__item a {
+  transition: 0.3s all ease;
+}
+.navbar-submenu__item a:hover {
+  color: #6691ff;
+}
+.navbar-submenu__container {
+  transition: 0.3s all ease;
+}
+.submenu-active {
+  display: none;
+}
+.arrow-active {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
   .navbar {
     margin: 25px 20px 0 30px;
+  }
+  .title {
+    margin-left: 0;
   }
   .nav-menu-list li {
     margin-left: 2rem;
@@ -75,5 +114,51 @@
 @media screen and (max-width: 780px) {
   .nav-menu-list {
     display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .navbar-submenu {
+    display: block;
+    left: 10px;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    position: absolute;
+    top: 90px;
+    font-family: "iranYekan-medium";
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: 0.3s;
+    opacity: 0;
+  }
+  .submenu-active {
+    top: 90px;
+    font-family: "iranYekan-medium";
+    font-size: 0.9rem;
+    border-radius: 10px;
+    display: block;
+    left: 10px;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    position: absolute;
+    transition: 0.3s;
+    opacity: 1;
+  }
+  .nav-submenu__arrow {
+    display: block;
+    top: 50px;
+    left: 58px;
+    width: 17px;
+    padding: 1rem 0;
+    position: absolute;
+    opacity: 0;
+  }
+  .arrow-active {
+    display: block;
+    top: 50px;
+    left: 58px;
+    width: 17px;
+    padding: 1rem 0;
+    position: absolute;
+    opacity: 1;
   }
 }

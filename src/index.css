@@ -25,11 +25,7 @@ ul {
   src: url(./fonts/iranYekan/IRANYekanBold.ttf);
   font-weight: 900;
 }
-@font-face {
-  font-family: "pinar-light";
-  src: url(./fonts//پینار/Statics/Pinar-DS2-Light.ttf);
-  font-weight: 500;
-}
+
 .swiper-pagination-bullet-active {
   color: #33bc31 !important;
 }

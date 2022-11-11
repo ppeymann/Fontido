@@ -35,7 +35,7 @@ const Sidebar = () => {
                   pathname === "/account/freeVideocover" ? "click" : ""
                 }
               >
-                <p>ویدیو و کاور رایگان</p>
+                <p> کاور رایگان</p>
               </Link>
             </li>
             <li
