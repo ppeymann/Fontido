@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import subImg from "../../assets/sub-image.png";
 import "./sub.css";
@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
+
 //sub body
 
 const Sub = () => {

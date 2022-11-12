@@ -1,0 +1,39 @@
+.sidebar {
+  position: absolute;
+  width: 132px;
+  height: 280px;
+  margin: 15px 64px 0 72px;
+}
+.side-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-list p {
+  font-family: "pinar-medium";
+  font-size: 18px;
+  line-height: 37.78px;
+  color: #273b4a;
+}
+
+.click p {
+  color: #4a72fe !important;
+}
+.side-menu-list {
+  list-style: none;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1200px) {
+  .side-menu-list p {
+    font-size: 15px;
+    line-height: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

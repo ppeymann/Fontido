@@ -5,16 +5,32 @@ import Register from "./components/register/Register";
 import Home from "./pages/Home/Home.js";
 import Video from "./pages/video/Video";
 import SubPage from "./pages/sub/Sub";
+import Account from "./pages/account/Account";
+import PurchaceHistorys from "./pages/purchase history/PurchaceHistory";
+import VideoCovers from "./pages/videocover/VideoCover";
+import Supporting from "./pages/supporting/Supporting";
+import AdminLogin from "./admin/adminLogin/AdminLogin";
+import AdminForget from "./admin/adminForgetPass/AdminForget";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/story" element={<Story />} />
-        <Route path="/video" element={<Video />} />
-        <Route path="/login" element={<Register />} />
-        <Route path="/sub" element={<SubPage />} />
+        <Route index element={<Home />} />
+        <Route path="story" element={<Story />} />
+        <Route path="video" element={<Video />} />
+        <Route path="login" element={<Register />} />
+        <Route path="sub" element={<SubPage />} />
+        <Route path="account">
+          <Route path="user" element={<Account />} />
+          <Route path="purchace" element={<PurchaceHistorys />} />
+          <Route path="freeVideocover" element={<VideoCovers />} />
+          <Route path="supporting" element={<Supporting />} />
+        </Route>
+        <Route path="admin">
+          <Route path="login" element={<AdminLogin />} />
+          <Route path="forget" element={<AdminForget />} />
+        </Route>
       </Routes>
     </div>
   );

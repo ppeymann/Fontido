@@ -1,0 +1,346 @@
+.notifications {
+  margin: 110px 180px 100px 74px;
+}
+.notif-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.check-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-side p {
+  font-family: "pinar-medium";
+  color: #000000;
+  font-size: 12px;
+}
+
+.notif-container .message {
+  margin: 30px 0;
+  text-align: center;
+  font-family: "pinar-medium";
+  font-size: 15px;
+}
+.notif-container .notif {
+  font-family: "pinar-medium";
+  color: #ffffff;
+  font-size: 18px;
+}
+.notif .notif-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 700px;
+  height: 60px;
+  padding: 0 20px;
+  background: #ffa7a7;
+  box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
+  border-radius: 10px;
+}
+.notif button {
+  padding: 5px 20px;
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
+  border-radius: 10px;
+  border: none;
+  font-family: "pinar-medium";
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.notif-delete button {
+  background: none;
+  border: none;
+  font-family: "pinar-medium";
+  color: #ff8181;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+
+.check {
+  margin: 0 20px;
+  position: relative;
+  display: block;
+  width: 79px;
+  height: 28px;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: ease-in 0.25s;
+}
+.check::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  width: 26px;
+  height: 18px;
+  background-color: #b2b0ff;
+  border-radius: 5px;
+  transition: ease-in 0.25s;
+}
+
+input[type="checkbox"]:checked ~ .check::before {
+  transform: translateX(40px);
+}
+
+.show-message {
+  margin: 30px 240px;
+}
+.message-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-container .message-link,
+.button-text,
+.date-input {
+  width: 670px;
+  height: 60px;
+  margin: 8px 0;
+  padding-right: 12px;
+  font-family: "pinar-medium";
+  background: #ffffff;
+  border: 2px solid #ebe8e8;
+  box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
+  border-radius: 10px;
+}
+.message-container input:focus {
+  outline: none;
+}
+
+.message-container .site-message {
+  width: 670px;
+  height: 90px;
+  margin-bottom: 8px;
+  padding-right: 8px;
+  background: #ffffff;
+  font-family: "pinar-medium";
+  border: 2px solid #ebe8e8;
+  box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
+  border-radius: 10px;
+  resize: none;
+}
+
+.message-container .date-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #8d8d8d;
+}
+
+.message-container .date-input .inputs input {
+  width: 131px;
+}
+input[type="time"]::-webkit-calendar-picker-indicator {
+  background: none;
+  display: none;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: none;
+  display: none;
+}
+.date-input .inputs input {
+  margin-right: 30px;
+  background: none;
+  border: none;
+}
+
+.colors {
+  width: 670px;
+}
+
+.colors-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "pinar-medium";
+  color: #8d8d8d;
+  font-size: 14px;
+}
+
+.colors-container label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.notif-container .confirm button {
+  margin: 30px 0;
+  width: 140px;
+  height: 60px;
+  font-family: "pinar-bold";
+  cursor: pointer;
+  color: #ffffff;
+  background: #3ee630;
+  border: 2px solid #3ee630;
+  box-shadow: 0px 4px 50px rgba(105, 255, 35, 0.5);
+  border-radius: 10px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 960px) {
+  .notif .notif-row {
+    width: 500px;
+  }
+  .show-message .message-container input {
+    width: 500px;
+  }
+  .show-message .message-container .date-input {
+    width: 500px;
+  }
+  .colors {
+    width: 500px;
+  }
+  .colors .confirm button {
+    padding: 10px 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .notifications {
+    margin: 110px 100px 100px 74px;
+  }
+  .notif-container .show-message {
+    width: 100%;
+  }
+  .notif .notif-row {
+    width: 400px;
+    height: 50px;
+    background: none;
+    background: #ffffff;
+    color: #8d8d8d;
+    border: 2px solid #ebe8e8;
+    box-shadow: 0px 4px 50px rgba(186, 186, 186, 0.15);
+    border-radius: 10px;
+    font-size: 12px;
+  }
+  .notif .notif-row button {
+    display: none;
+  }
+  .show-message .message-container input {
+    width: 400px;
+    height: 50px;
+  }
+  .show-message .message-container .date-input {
+    width: 400px;
+  }
+  .show-message .message-container .date-input .inputs {
+    display: flex;
+    flex-direction: row;
+  }
+  .show-message .message-container .date-input .inputs input {
+    width: 50px;
+  }
+
+  .colors {
+    width: 400px;
+  }
+  input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  .colors-container {
+    font-size: 10px;
+  }
+  .notif-container .confirm button {
+    width: 120px;
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .notif-container .check-side p {
+    font-size: 8px;
+  }
+  input[type="checkbox"]:checked ~ .check::before {
+    transform: translateX(16px);
+  }
+  .notif-container .check-side .check {
+    width: 35px;
+    height: 15px;
+  }
+  .check::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 10px;
+    background-color: #b2b0ff;
+    border-radius: 5px;
+    transition: ease-in 0.25s;
+  }
+  .message {
+    display: none;
+  }
+  .notif .notif-row {
+    margin-top: 35px;
+    width: 300px;
+    height: 30px;
+    font-size: 8px;
+  }
+  .notif .notif-delete button {
+    font-size: 8px;
+  }
+  .show-message .message-container input {
+    width: 300px;
+    height: 41px;
+    font-size: 10px;
+  }
+  .show-message .message-container .date-input {
+    width: 300px;
+    display: flex;
+    font-size: 10px;
+  }
+  .show-message .message-container .date-input .inputs input {
+    width: 60px;
+  }
+  .colors {
+    width: 300px;
+  }
+  .colors .confirm button {
+    width: 100%;
+    height: 35px;
+    font-size: 8px;
+
+    text-align: center;
+  }
+}

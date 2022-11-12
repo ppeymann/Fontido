@@ -1,0 +1,32 @@
+.adminNav-container {
+  margin: 50px 100px;
+  font-family: "pinar-bold";
+}
+.adminNav-container__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.adminNav-views {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.adminNav-icon {
+  display: none !important;
+}
+@media screen and (max-width: 800px) {
+  .adminNav-container {
+    margin: 50px 20px;
+  }
+  .adminNav-views {
+    display: none;
+  }
+  .adminNav-exit {
+    display: none;
+  }
+  .adminNav-icon {
+    display: block !important;
+  }
+}

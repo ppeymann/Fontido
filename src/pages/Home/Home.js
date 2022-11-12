@@ -5,6 +5,11 @@ import topImg from "../../assets/Group 37.png";
 import midImg from "../../assets/ابعاد سایز های یک سایت.png";
 import botImg from "../../assets/صفحه اصلی پایین.png";
 import Footer from "../../components/footer/Footer";
+import Account from "../account/Account";
+import PurchaceHistorys from "../purchase history/PurchaceHistory";
+import VideoCovers from "../videocover/VideoCover";
+import UsersReturn from "../adminaccount/Users";
+import NotificationsReturn from "../adminaccount/Notifications";
 
 const HomePage = () => {
   return (
@@ -38,8 +43,10 @@ const HomePage = () => {
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <HomePage />
+      {/* <Navbar /> */}
+      {/* <HomePage /> */}
+      {/* <UsersReturn /> */}
+      <NotificationsReturn />
       <Footer />
     </>
   );
