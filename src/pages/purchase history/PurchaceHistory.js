@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
 import { server } from "../../server/server";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -6,8 +6,25 @@ import Support from "../../components/Support and Settings/Support";
 import "../purchase history/PurchaseHistory.css";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
+import { useToken } from "../../auth/useToken/useToken";
+import axios from "axios";
 
 const PurchaceHistory = () => {
+  const [token] = useToken();
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://amirhosseinkarami.ir/api/UserPanel/GetPlanPurchasesHistory",
+        {
+          headers: { authorization: `Bearer ${token}` },
+        }
+      )
+      .then((res) => setData(res.data))
+      .then(console.log(data));
+  }, []);
+
   let info = server;
   return (
     <div className="PurchaceHistory">
