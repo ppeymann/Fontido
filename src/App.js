@@ -13,6 +13,8 @@ import AdminLogin from "./admin/adminLogin/AdminLogin";
 import AdminForget from "./admin/adminForgetPass/AdminForget";
 import Login from "./components/login/Login";
 import { UserRoute } from "./auth/userRoute/UserRoute";
+import NotificationsReturn from "./pages/adminaccount/Notifications";
+import UsersReturn from "./pages/adminaccount/Users";
 
 function App() {
   return (
@@ -61,6 +63,8 @@ function App() {
         <Route path="admin">
           <Route path="login" element={<AdminLogin />} />
           <Route path="forget" element={<AdminForget />} />
+          <Route path="notif" element={<NotificationsReturn />} />
+          <Route path="user" element={<UsersReturn />} />
         </Route>
       </Routes>
     </div>
