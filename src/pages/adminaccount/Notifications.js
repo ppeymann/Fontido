@@ -50,7 +50,7 @@ const Notifications = () => {
             <label className="date-input">
               تنظیم تاریخ پایداری اعلان
               <span className="inputs">
-                <input type="time" value="2۲۲" />
+                <input type="time" value="22" />
                 <input type="date" value="1401-08-12" />
               </span>
             </label>
