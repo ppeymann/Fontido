@@ -2,8 +2,8 @@ import React from "react";
 
 import { api } from "../../server/api";
 // ccs
-import "../../pages/adminaccount/users.css";
-import { Grid } from "@mui/material";
+import "./users.css";
+
 // components
 import AdminNav from "../../components/adminNav/AdminNav";
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";

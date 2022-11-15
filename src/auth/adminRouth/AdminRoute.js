@@ -1,9 +1,10 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { useUser } from "../useUser/useUser.js";
 
 const AdminRoute = ({ children }) => {
-  const admin = null;
-  if (!admin) return <Navigate to="/admin/login" />;
+  const user = useUser();
+  if (!user) return <Navigate to="/admin/login" />;
   return children;
 };
 

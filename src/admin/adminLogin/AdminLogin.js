@@ -19,7 +19,7 @@ const AdminLogin = () => {
     );
     const { token } = response.data;
     setToken(token);
-    navigate("/");
+    navigate("/admin/notif");
     console.log(token);
   };
 

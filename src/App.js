@@ -13,8 +13,10 @@ import AdminLogin from "./admin/adminLogin/AdminLogin";
 import AdminForget from "./admin/adminForgetPass/AdminForget";
 import Login from "./components/login/Login";
 import { UserRoute } from "./auth/userRoute/UserRoute";
-import NotificationsReturn from "./pages/adminaccount/Notifications";
-import UsersReturn from "./pages/adminaccount/Users";
+import NotificationsReturn from "./admin/adminaccount/Notifications";
+import UsersReturn from "./admin/adminaccount/Users";
+import Financial from "./admin/financial/Financial";
+import AdminRoute from "./auth/adminRouth/AdminRoute";
 
 function App() {
   return (
@@ -63,8 +65,30 @@ function App() {
         <Route path="admin">
           <Route path="login" element={<AdminLogin />} />
           <Route path="forget" element={<AdminForget />} />
-          <Route path="notif" element={<NotificationsReturn />} />
-          <Route path="user" element={<UsersReturn />} />
+          <Route
+            path="notif"
+            element={
+              <AdminRoute>
+                <NotificationsReturn />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="user"
+            element={
+              <AdminRoute>
+                <UsersReturn />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="financial"
+            element={
+              <AdminRoute>
+                <Financial />
+              </AdminRoute>
+            }
+          />
         </Route>
       </Routes>
     </div>
