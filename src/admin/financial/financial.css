@@ -1,3 +1,41 @@
 .financial {
   margin: 120px 250px 100px 74px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.plan-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+  margin: 1.5rem 0;
+  font-family: "iranYekan-bold";
+  font-size: 1.2rem;
+}
+.item-plan__name {
+  color: #454545;
+}
+.item-plan__price {
+  color: #5cd025;
+}
+.allPrice {
+  font-family: "iranYekan-bold";
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 768px) {
+  .financial {
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .plan-container,
+  .allPrice {
+    font-size: 0.8rem;
+  }
 }
