@@ -17,6 +17,7 @@ import NotificationsReturn from "./admin/adminaccount/Notifications";
 import UsersReturn from "./admin/adminaccount/Users";
 import Financial from "./admin/financial/Financial";
 import AdminRoute from "./auth/adminRouth/AdminRoute";
+import AdminSupp from "./admin/adminSupp/AdminSupp";
 
 function App() {
   return (
@@ -86,6 +87,14 @@ function App() {
             element={
               <AdminRoute>
                 <Financial />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="support"
+            element={
+              <AdminRoute>
+                <AdminSupp />
               </AdminRoute>
             }
           />
