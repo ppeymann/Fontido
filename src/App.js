@@ -18,16 +18,33 @@ import UsersReturn from "./admin/adminaccount/Users";
 import Financial from "./admin/financial/Financial";
 import AdminRoute from "./auth/adminRouth/AdminRoute";
 import AdminSupp from "./admin/adminSupp/AdminSupp";
+import { useUser } from "./auth/useUser/useUser";
+import AdminSecu from "./admin/adminSecu/AdminSecu";
 
 function App() {
+  const user = useUser();
+
   return (
     <div className="App">
       <Routes>
-        <Route index element={<Home />} />
+        <Route
+          path="/"
+          element={
+            user ? (
+              user.unique_name === "admin" ? (
+                <NotificationsReturn />
+              ) : (
+                <Home />
+              )
+            ) : (
+              <Home />
+            )
+          }
+        />
         <Route path="story" element={<Story />} />
         <Route path="video" element={<Video />} />
         <Route path="register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="login" element={<Login />} />
         <Route path="sub" element={<SubPage />} />
         <Route path="account">
           <Route
@@ -95,6 +112,14 @@ function App() {
             element={
               <AdminRoute>
                 <AdminSupp />
+              </AdminRoute>
+            }
+          />
+          <Route
+            path="security"
+            element={
+              <AdminRoute>
+                <AdminSecu />
               </AdminRoute>
             }
           />

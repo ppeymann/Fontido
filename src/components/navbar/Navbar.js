@@ -65,10 +65,11 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="nav-login__container" onClick={() => setShow(!show)}>
-          <Link to={!token && "/login"} className="nav-login">
-            <Link to="/account/user" className="login-text">
-              {token ? data.userName : "ورود"}
-            </Link>
+          <Link
+            to={!token ? "/login" : "/account/user"}
+            className={!token ? "nav-login" : "login-text"}
+          >
+            {token ? data.userName : "ورود"}
             <PermIdentityIcon />
           </Link>
           {token && (
