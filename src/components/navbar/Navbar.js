@@ -8,6 +8,7 @@ import axios from "axios";
 
 import logo from "../../assets/logo.png";
 import polygon from "../../assets/Polygon 17.png";
+import { Divider } from "@mui/material";
 
 const Navbar = () => {
   const { pathname } = useLocation();
@@ -65,13 +66,15 @@ const Navbar = () => {
           </ul>
         </nav>
         <div className="nav-login__container" onClick={() => setShow(!show)}>
-          <Link
-            to={!token ? "/login" : "/account/user"}
-            className={!token ? "nav-login" : "login-text"}
-          >
-            {token ? data.userName : "ورود"}
-            <PermIdentityIcon />
-          </Link>
+          <div className="login-text">
+            <Link
+              to={!token ? "/login" : "/account/user"}
+              className="nav-login"
+            >
+              {token ? data.userName : "ورود"}
+            </Link>
+            <PermIdentityIcon className="login-nav" />
+          </div>
           {token && (
             <div className="navbar-submenu__container">
               <img
@@ -87,18 +90,21 @@ const Navbar = () => {
                   >
                     <Link to="/account/user">حساب کاربری</Link>
                   </li>
+                  <Divider />
                   <li
                     onClick={() => setShow(false)}
                     className="navbar-submenu__item"
                   >
                     <Link to="/account/purchace">تاریخچه خرید</Link>
                   </li>
+                  <Divider />
                   <li
                     onClick={() => setShow(false)}
                     className="navbar-submenu__item"
                   >
                     <Link to="/account/freeVideocover">کاور رایگان</Link>
                   </li>
+                  <Divider />
                   <li
                     onClick={() => localStorage.removeItem("token")}
                     className="navbar-submenu__item"
@@ -111,9 +117,9 @@ const Navbar = () => {
           )}
         </div>
 
-        <div className="hambergur-menu">
+        {/* <div className="hambergur-menu">
           <SortIcon />
-        </div>
+        </div> */}
       </div>
     </div>
   );

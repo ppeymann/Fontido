@@ -61,6 +61,9 @@
 }
 .login-text {
   font-family: "iranYekan-medium";
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 .navbar-submenu {
   display: none;
@@ -105,9 +108,6 @@
   .nav-menu-list li a {
     font-size: 14px;
   }
-  .login-text {
-    display: none;
-  }
   .hambergur-menu {
     display: block;
   }
@@ -118,8 +118,15 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .navbar-submenu {
+  .nav-login__container {
     display: block;
+    margin-left: 1.2rem;
+  }
+  .login-nav {
+    cursor: pointer;
+  }
+  .navbar-submenu {
+    display: none;
     left: 10px;
     background-color: #f8f8f8;
     padding: 1rem;
@@ -132,12 +139,12 @@
     opacity: 0;
   }
   .submenu-active {
-    top: 90px;
+    top: 80px;
     font-family: "iranYekan-medium";
     font-size: 0.9rem;
     border-radius: 10px;
     display: block;
-    left: 10px;
+    left: 7px;
     background-color: #f8f8f8;
     padding: 1rem;
     position: absolute;
@@ -145,7 +152,7 @@
     opacity: 1;
   }
   .nav-submenu__arrow {
-    display: block;
+    display: none;
     top: 50px;
     left: 58px;
     width: 17px;
@@ -155,11 +162,14 @@
   }
   .arrow-active {
     display: block;
-    top: 50px;
-    left: 58px;
+    top: 42px;
+    left: 53px;
     width: 17px;
     padding: 1rem 0;
     position: absolute;
     opacity: 1;
+  }
+  .login-text__name {
+    display: none;
   }
 }

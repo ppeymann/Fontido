@@ -3,6 +3,7 @@ import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import "./adminNav.css";
 import polygon from "../../assets/Polygon 17.png";
 import { Link } from "react-router-dom";
+import { Divider } from "@mui/material";
 const AdminNav = () => {
   const [show, setShow] = useState(false);
   return (
@@ -19,19 +20,71 @@ const AdminNav = () => {
         >
           <Link to="/admin/login">خروج</Link>
         </div>
-        {/* <div className="nav-login__container" onClick={() => setShow(!show)}>
+        <div
+          className="adminNav-login__container"
+          onClick={() => setShow(!show)}
+        >
           <PermIdentityIcon />
-          <div className="navbar-submenu__container">
+          <div className="adminNavbar-submenu__container">
             <img
               src={polygon}
               alt="polygon"
-              className={!show ? "nav-submenu__arrow" : "arrow-active"}
+              className={
+                !show ? "adminNav-submenu__arrow" : "adminArrow-active"
+              }
             />
-            <div className={!show ? "navbar-submenu" : "submenu-active"}>
-              <ul className="navbar-submenu__menu"></ul>
+            <div
+              className={!show ? "adminNavbar-submenu" : "adminSubmenu-active"}
+            >
+              <ul className="adminNavbar-submenu__menu">
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => setShow(false)}
+                >
+                  <Link to="/admin/notif">اعلانات</Link>
+                </li>
+                <Divider />
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => setShow(false)}
+                >
+                  <Link to="/admin/user">کاربران</Link>
+                </li>
+                <Divider />
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => setShow(false)}
+                >
+                  <Link to="/admin/financial">مالی</Link>
+                </li>
+                <Divider />
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => setShow(false)}
+                >
+                  <Link to="/admin/support">پشتیبانی</Link>
+                </li>
+                <Divider />
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => setShow(false)}
+                >
+                  <Link to="/admin/security">امنیت</Link>
+                </li>
+                <Divider />
+                <li
+                  className="adminNavbar-submenu__item"
+                  onClick={() => {
+                    setShow(false);
+                    localStorage.removeItem("token");
+                  }}
+                >
+                  <Link to="/admin/login">خروج</Link>
+                </li>
+              </ul>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
