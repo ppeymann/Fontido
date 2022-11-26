@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import AdminNav from "../../components/adminNav/AdminNav";
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
 import Sms from "../../components/sms/Sms";
@@ -9,6 +10,9 @@ const Notifications = () => {
 
   return (
     <div className="notifications">
+      <Helmet>
+        <title>ادمین | اعلانات</title>
+      </Helmet>
       <div className="notif-container">
         <div className="check-side">
           <p>اعلان داخل سایت</p>

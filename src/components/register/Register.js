@@ -6,6 +6,8 @@ import logo from "../../assets/logo.png";
 import { useToken } from "../../auth/useToken/useToken";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [token, setToken] = useToken();
@@ -17,22 +19,46 @@ const Register = () => {
   const [rePassword, setRePassword] = useState("");
 
   const onSignUp = async () => {
-    const response = await axios.post(
-      "https://amirhosseinkarami.ir/api/Account/Register",
-      {
-        name: name,
-        mobilePhone: mobilePhone,
-        password: password,
-        rePassword: rePassword,
-      }
-    );
-    const { token } = response.data;
-    setToken(token);
-    navigate("/");
+    try {
+      const response = await axios.post(
+        "https://amirhosseinkarami.ir/api/Account/Register",
+        {
+          name: name,
+          mobilePhone: mobilePhone,
+          password: password,
+          rePassword: rePassword,
+        }
+      );
+      const { token } = response.data;
+      setToken(token);
+      Swal.fire({
+        position: "top-start",
+        icon: "success",
+        text: "ثبت نام شما با موفقیت انجام شد",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/");
+    } catch {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        text: "دوباره تلاش کنید",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setName("");
+      setPassword("");
+      setMobilePhone("");
+      setRePassword("");
+    }
   };
 
   return (
     <div className="register">
+      <Helmet>
+        <title>ثبت نام</title>
+      </Helmet>
       <div className="register-container">
         <div className="logo-title">
           <img className="register-logo" src={logo} alt="logo" />

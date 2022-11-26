@@ -6,11 +6,15 @@ import Navbar from "../../components/navbar/Navbar";
 import Support from "../../components/Support and Settings/Support";
 import Sidebar from "../../components/sidebar/Sidebar";
 import { Grid } from "@mui/material";
+import { Helmet } from "react-helmet";
 
 const Sup = () => {
   const [active, setActive] = useState(true);
   return (
     <div className="sup">
+      <Helmet>
+        <title>پشتیبانی</title>
+      </Helmet>
       <Grid
         container
         className="sup-inputs"

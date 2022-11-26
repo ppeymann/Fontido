@@ -14,6 +14,7 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { Grid } from "@mui/material";
+import { Helmet } from "react-helmet";
 
 const Account = () => {
   const user = useUser();
@@ -30,6 +31,9 @@ const Account = () => {
 
   return (
     <div className="account">
+      <Helmet>
+        <title>حساب کاربری</title>
+      </Helmet>
       <Grid
         gap={1}
         justifyContent="space-evenly"

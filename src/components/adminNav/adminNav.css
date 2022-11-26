@@ -49,6 +49,7 @@
 }
 .adminNav-login__container {
   display: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 800px) {
   .adminNav-container {

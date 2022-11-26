@@ -3,6 +3,7 @@ import "./adminSupp.css";
 
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
 import AdminNav from "../../components/adminNav/AdminNav";
+import { Helmet } from "react-helmet";
 
 const AdminSupport = () => {
   const [search, setSearch] = useState("");
@@ -10,6 +11,9 @@ const AdminSupport = () => {
 
   return (
     <div className="supp">
+      <Helmet>
+        <title>ادمین | پشتیبانی</title>
+      </Helmet>
       <div className="supp-container">
         <input
           type="text"
@@ -23,10 +27,10 @@ const AdminSupport = () => {
             <p className="answer-top__name" onClick={() => setShow(!show)}>
               پیمان ملک
             </p>
+            <p className="answer-top__title">موضوع:خرید اشتراک</p>
             <p className="answer-top__btn">پاسخ پیام</p>
           </div>
           <div className={show ? "answer-mid__active" : "answer-mid"}>
-            <p className="answer-mid__title">موضوع:خرید اشتراک</p>
             <p className="answer-mid__title">پلن:سه ماهه</p>
             <p className="answer-mid__title">1402/01/01</p>
             <p className="answer-mid__title">11:00</p>

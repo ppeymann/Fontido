@@ -1,5 +1,6 @@
 import { Divider } from "@mui/material";
 import React from "react";
+import { Helmet } from "react-helmet";
 import AdminNav from "../../components/adminNav/AdminNav";
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
 
@@ -13,6 +14,9 @@ const FinancialMain = () => {
   ];
   return (
     <div className="financial">
+      <Helmet>
+        <title>ادمین | مالی</title>
+      </Helmet>
       <div className="financial-container">
         {info.map((item) => (
           <>

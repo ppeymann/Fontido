@@ -8,6 +8,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { useToken } from "../../auth/useToken/useToken";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 const PurchaceHistory = () => {
   const [token] = useToken();
@@ -28,6 +29,9 @@ const PurchaceHistory = () => {
   let info = server;
   return (
     <div className="PurchaceHistory">
+      <Helmet>
+        <title>تاریخچه خرید</title>
+      </Helmet>
       {info.map((item) => (
         <Grid container className="ph-container" gap={2}>
           <Grid className="clm" item>

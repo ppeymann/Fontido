@@ -5,10 +5,14 @@ import topImg from "../../assets/Group 37.png";
 import midImg from "../../assets/ابعاد سایز های یک سایت.png";
 import botImg from "../../assets/صفحه اصلی پایین.png";
 import Footer from "../../components/footer/Footer";
+import { Helmet } from "react-helmet";
 
 const HomePage = () => {
   return (
     <div className="home-page">
+      <Helmet>
+        <title>فونتیدو</title>
+      </Helmet>
       <h1 className="home-page__title">
         <span className="title-green"> ساخت </span>استوری،کاور برای تمام شبکه
         های مجازی تمام پلتفورم ها در تمام ابعاد

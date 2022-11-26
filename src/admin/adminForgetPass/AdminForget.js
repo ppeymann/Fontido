@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import "./adminForget.css";
 
@@ -6,6 +7,9 @@ const AdminForget = () => {
   const navigate = useNavigate();
   return (
     <div className="adminForget">
+      <Helmet>
+        <title>ادمین | فراموشی رمز</title>
+      </Helmet>
       <div className="adminForget-container">
         <h1 className="adminForget-title">فراموشی رمز عبور ادمین</h1>
         <div className="adminForget-email-back">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
@@ -8,6 +9,9 @@ import "../videocover/videocover.css";
 const VideoCover = () => {
   return (
     <div className="videocover">
+      <Helmet>
+        <title>کاور رایگان</title>
+      </Helmet>
       <div className="vc-container">
         <div className="top-clm ">
           <p>

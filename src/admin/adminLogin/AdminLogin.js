@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useToken } from "../../auth/useToken/useToken";
 import "./adminLogin.css";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const AdminLogin = () => {
   const [mobilePhone, setMobilePhone] = useState("");
@@ -10,21 +12,45 @@ const AdminLogin = () => {
   const [token, setToken] = useToken();
   const navigate = useNavigate();
   const loginAdmin = async () => {
-    const response = await axios.post(
-      "https://amirhosseinkarami.ir/api/Admin/Account/LoginPanel",
-      {
-        mobilePhone: mobilePhone,
-        password: password,
+    try {
+      const response = await axios.post(
+        "https://amirhosseinkarami.ir/api/Admin/Account/LoginPanel",
+        {
+          mobilePhone: mobilePhone,
+          password: password,
+        }
+      );
+      const { token } = response.data;
+      setToken(token);
+      if (token) {
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          text: "ورود با موفقیت انجام شد",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       }
-    );
-    const { token } = response.data;
-    setToken(token);
-    navigate("/admin/notif");
-    console.log(token);
+      navigate("/admin/notif");
+      console.log(token);
+    } catch {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        text: "نام کاربری یا رمز عبور اشتباه است",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setMobilePhone("");
+      setPassword("");
+    }
   };
 
   return (
     <div className="adminLogin">
+      <Helmet>
+        <title>ادمین | ورود</title>
+      </Helmet>
       <div className="adminLogin-container">
         <h1 className="adminLogin-title">
           پنل ادمین <span>فونتیدو</span>

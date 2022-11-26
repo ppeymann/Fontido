@@ -7,11 +7,15 @@ import "./users.css";
 // components
 import AdminNav from "../../components/adminNav/AdminNav";
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
+import { Helmet } from "react-helmet";
 
 const Users = () => {
   let info = api;
   return (
     <div className="users">
+      <Helmet>
+        <title>ادمین | کاربران</title>
+      </Helmet>
       <div className="container">
         <div className="media-side">
           <div className="media-container">

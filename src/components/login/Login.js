@@ -4,6 +4,8 @@ import logo from "../../assets/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useToken } from "../../auth/useToken/useToken";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const [mobilePhone, setMobilePhone] = useState("");
@@ -12,20 +14,45 @@ const Login = () => {
   const navigate = useNavigate();
 
   const loginAccount = async () => {
-    const response = await axios.post(
-      "https://amirhosseinkarami.ir/api/Account/Login",
-      {
-        mobilePhone: mobilePhone,
-        password: password,
+    try {
+      const response = await axios.post(
+        "https://amirhosseinkarami.ir/api/Account/Login",
+        {
+          mobilePhone: mobilePhone,
+          password: password,
+        }
+      );
+
+      const { token } = response.data;
+      if (token) {
+        Swal.fire({
+          position: "top-start",
+          icon: "success",
+          text: "ورد با موفقیت انجام شد",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        setToken(token);
+        navigate("/account/user");
       }
-    );
-    const { token } = response.data;
-    setToken(token);
-    navigate("/account/user");
+    } catch {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        text: "نام کاربری یا رمز اشتباه است",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setMobilePhone("");
+      setPassword("");
+    }
   };
 
   return (
     <div className="login">
+      <Helmet>
+        <title>ورود</title>
+      </Helmet>
       <div className="login-container">
         <div className="logo-title">
           <img className="login-logo" src={logo} alt="logo" />

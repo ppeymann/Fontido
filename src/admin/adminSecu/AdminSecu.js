@@ -4,6 +4,7 @@ import "./adminSecu.css";
 import AdminNav from "../../components/adminNav/AdminNav";
 import AdminSidebar from "../../components/adminSidebar/AdminSidebar";
 import { Grid } from "@mui/material";
+import { Helmet } from "react-helmet";
 
 const Security = () => {
   const [oldPass, setOldPass] = useState("");
@@ -12,6 +13,9 @@ const Security = () => {
 
   return (
     <div className="secu">
+      <Helmet>
+        <title>ادمین | امنیت</title>
+      </Helmet>
       <div className="secu-container">
         <h4 className="secu-title">دستگاه های فعال</h4>
         <div className="secu-device__container">

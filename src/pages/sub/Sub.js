@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 
 import { Pagination } from "swiper";
 import axios from "axios";
+import { Helmet } from "react-helmet";
 
 //sub body
 
@@ -24,6 +25,9 @@ const Sub = () => {
   console.log(data);
   return (
     <div className="sub">
+      <Helmet>
+        <title>خرید پلن</title>
+      </Helmet>
       <div className="sub-top">
         <img src={subImg} alt="sub-image" className="sub-img" />
         <div className="sub-top__text">
