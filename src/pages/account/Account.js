@@ -29,6 +29,7 @@ const Account = () => {
       })
       .then((res) => {
         setData(res.data);
+        z;
         console.log(res.data);
       });
     const resp = axios

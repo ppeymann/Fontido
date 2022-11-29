@@ -21,6 +21,7 @@ import AdminSupp from "./admin/adminSupp/AdminSupp";
 import { useUser } from "./auth/useUser/useUser";
 import AdminSecu from "./admin/adminSecu/AdminSecu";
 import ForgotUser from "./components/forgotUser/ForgotUser";
+import OnlinePay from "./pages/onlinePayment/OnlinePay";
 
 function App() {
   const user = useUser();
@@ -48,6 +49,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="forgot" element={<ForgotUser />} />
         <Route path="sub" element={<SubPage />} />
+        <Route path={`onlinePayment:redirectParam`} element={<OnlinePay />} />
         <Route path="account">
           <Route
             path="user"
