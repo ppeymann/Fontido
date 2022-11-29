@@ -20,6 +20,7 @@ import AdminRoute from "./auth/adminRouth/AdminRoute";
 import AdminSupp from "./admin/adminSupp/AdminSupp";
 import { useUser } from "./auth/useUser/useUser";
 import AdminSecu from "./admin/adminSecu/AdminSecu";
+import ForgotUser from "./components/forgotUser/ForgotUser";
 
 function App() {
   const user = useUser();
@@ -45,6 +46,7 @@ function App() {
         <Route path="video" element={<Video />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="forgot" element={<ForgotUser />} />
         <Route path="sub" element={<SubPage />} />
         <Route path="account">
           <Route

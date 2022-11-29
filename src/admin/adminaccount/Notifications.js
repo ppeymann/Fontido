@@ -21,6 +21,7 @@ const Notifications = () => {
               type="checkbox"
               value={notifPage}
               onChange={() => setNotifPage(!notifPage)}
+              className="notif-checkbox"
             />
             <span className="check"></span>
           </label>

@@ -61,6 +61,23 @@
   color: #4e494e;
   font-family: "iranYekan-medium";
 }
+.checkbox-div {
+  font-family: "iranYekan-medium";
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #4e494e;
+}
+.register-input_checkbox {
+  transform: scale(1.25);
+  cursor: pointer;
+}
+.invite-inp {
+  display: none;
+}
+
 @media screen and (max-width: 500px) {
   .register-login__btn,
   .register-signUp__btn {

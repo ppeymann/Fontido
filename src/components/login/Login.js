@@ -82,6 +82,9 @@ const Login = () => {
             ثبت نام
           </Link>
         </div>
+        <Link className="login-user_forgot" to={"/forgot"}>
+          رمز خود را فراموش کرده اید؟
+        </Link>
       </div>
     </div>
   );

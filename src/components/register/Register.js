@@ -17,6 +17,8 @@ const Register = () => {
   const [mobilePhone, setMobilePhone] = useState("");
   const [password, setPassword] = useState("");
   const [rePassword, setRePassword] = useState("");
+  const [invite, setInvite] = useState("");
+  const [check, setCheck] = useState(false);
 
   const onSignUp = async () => {
     try {
@@ -27,6 +29,42 @@ const Register = () => {
           mobilePhone: mobilePhone,
           password: password,
           rePassword: rePassword,
+        }
+      );
+      const { token } = response.data;
+      setToken(token);
+      Swal.fire({
+        position: "top-start",
+        icon: "success",
+        text: "ثبت نام شما با موفقیت انجام شد",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      navigate("/");
+    } catch {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        text: "دوباره تلاش کنید",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setName("");
+      setPassword("");
+      setMobilePhone("");
+      setRePassword("");
+    }
+  };
+  const onSignUpInvite = async () => {
+    try {
+      const response = await axios.post(
+        "https://amirhosseinkarami.ir/api/Account/RegisterWithInvite",
+        {
+          name: name,
+          mobilePhone: mobilePhone,
+          password: password,
+          rePassword: rePassword,
+          inviteCode: invite,
         }
       );
       const { token } = response.data;
@@ -93,9 +131,27 @@ const Register = () => {
             className="register-input green"
             placeholder="تکرار رمز عبور"
           />
+          <div className="checkbox-div">
+            <label htmlFor="checkbox">کد معرف دارید؟</label>
+            <input
+              type="checkbox"
+              onChange={(e) => setCheck(!check)}
+              className="register-input_checkbox"
+            />
+          </div>
+          <input
+            value={invite}
+            onChange={(e) => setInvite(e.target.value)}
+            type="password"
+            className={check ? "register-input" : "invite-inp"}
+            placeholder="کد معرف خود را وارد کنید"
+          />
         </div>
         <div className="register-btns">
-          <button className="register-signUp__btn" onClick={onSignUp}>
+          <button
+            className="register-signUp__btn"
+            onClick={check ? onSignUpInvite : onSignUp}
+          >
             ساحت حساب کاربری
           </button>
           <Link to="/login" className="register-login__btn">

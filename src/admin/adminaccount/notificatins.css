@@ -63,7 +63,7 @@
   cursor: pointer;
 }
 
-input[type="checkbox"] {
+.notif-checkbox {
   -webkit-appearance: none;
   visibility: hidden;
   display: none;

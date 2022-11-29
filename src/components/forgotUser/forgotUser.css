@@ -1,0 +1,38 @@
+.forgot {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.forgot-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  gap: 0.8rem;
+}
+.forgot-title {
+  font-family: "iranYekan-bold";
+  color: #5a74d1;
+}
+.forgot-inp {
+  width: 70%;
+  padding: 1rem 0.5rem;
+  border: 2px solid #e5e4ea;
+  border-radius: 10px;
+  outline: none;
+  font-family: "iranYekan-medium";
+}
+.forgot-btn {
+  width: 70%;
+  padding: 1rem 0.5rem;
+  background-color: #2f99e7;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-family: "iranYekan-medium";
+  cursor: pointer;
+}

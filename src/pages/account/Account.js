@@ -35,7 +35,7 @@ const Account = () => {
         <title>حساب کاربری</title>
       </Helmet>
       <Grid
-        gap={1}
+        gap={0.5}
         justifyContent="space-evenly"
         mb={10}
         container
@@ -43,9 +43,6 @@ const Account = () => {
       >
         <Grid item xs={12} md={3.5} className="acc-fullName acc-input">
           نام و نام خانوادگی:{data.userName ? ` ${data.userName}` : ""}
-        </Grid>
-        <Grid item xs={12} md={3.5} className="acc-email acc-input">
-          ایمیل شما:
         </Grid>
         <Grid item xs={12} md={3.5} className="acc-phoneNum acc-input">
           شماره همراه : {data.mobilePhone ? `    ${data.mobilePhone}` : ""}
