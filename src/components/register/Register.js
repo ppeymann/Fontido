@@ -20,76 +20,15 @@ const Register = () => {
   const [invite, setInvite] = useState("");
   const [check, setCheck] = useState(false);
 
-  const onSignUp = async () => {
-    try {
-      const response = await axios.post(
-        "https://amirhosseinkarami.ir/api/Account/Register",
-        {
-          name: name,
-          mobilePhone: mobilePhone,
-          password: password,
-          rePassword: rePassword,
-        }
-      );
-      const { token } = response.data;
-      setToken(token);
-      Swal.fire({
-        position: "top-start",
-        icon: "success",
-        text: "ثبت نام شما با موفقیت انجام شد",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      navigate("/");
-    } catch {
-      Swal.fire({
-        position: "top-start",
-        icon: "error",
-        text: "دوباره تلاش کنید",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      setName("");
-      setPassword("");
-      setMobilePhone("");
-      setRePassword("");
-    }
-  };
-  const onSignUpInvite = async () => {
-    try {
-      const response = await axios.post(
-        "https://amirhosseinkarami.ir/api/Account/RegisterWithInvite",
-        {
-          name: name,
-          mobilePhone: mobilePhone,
-          password: password,
-          rePassword: rePassword,
-          inviteCode: invite,
-        }
-      );
-      const { token } = response.data;
-      setToken(token);
-      Swal.fire({
-        position: "top-start",
-        icon: "success",
-        text: "ثبت نام شما با موفقیت انجام شد",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      navigate("/");
-    } catch {
-      Swal.fire({
-        position: "top-start",
-        icon: "error",
-        text: "دوباره تلاش کنید",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      setName("");
-      setPassword("");
-      setMobilePhone("");
-      setRePassword("");
-    }
+  const onSignUp = () => {
+    axios
+      .post("https://amirhosseinkarami.ir/api/Account/Register", {
+        name: name,
+        mobilePhone: mobilePhone,
+        password: password,
+        rePassword: rePassword,
+      })
+      .then((res) => res.data);
   };
 
   return (
@@ -148,10 +87,7 @@ const Register = () => {
           />
         </div>
         <div className="register-btns">
-          <button
-            className="register-signUp__btn"
-            onClick={check ? onSignUpInvite : onSignUp}
-          >
+          <button className="register-signUp__btn" onClick={onSignUp}>
             ساحت حساب کاربری
           </button>
           <Link to="/login" className="register-login__btn">

@@ -20,13 +20,22 @@ const Account = () => {
   const user = useUser();
   const [token, setToken] = useToken();
   const [data, setData] = useState({});
-
+  const [planData, setPlanData] = useState({});
+  const url = "https://amirhosseinkarami.ir";
   useEffect(() => {
     const res = axios
-      .get("https://amirhosseinkarami.ir/api/UserPanel/GetUserInformation", {
+      .get(url + "/api/UserPanel/GetUserInformation", {
         headers: { authorization: `Bearer ${token}` },
       })
-      .then((res) => setData(res.data));
+      .then((res) => {
+        setData(res.data);
+        console.log(res.data);
+      });
+    const resp = axios
+      .get(url + "/api/UserPanel/GetUserActivePlan", {
+        headers: { authorization: `Bearer ${token}` },
+      })
+      .then((res) => console.log(res));
   }, []);
 
   return (
