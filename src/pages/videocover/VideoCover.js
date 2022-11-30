@@ -11,19 +11,32 @@ import "../videocover/videocover.css";
 const VideoCover = () => {
   const [data, setData] = useState("");
   const [user, setUser] = useState(0);
+  const [gift, setGift] = useState(0);
+  const [invited, setInvited] = useState(0);
   const [token] = useToken();
   const url = "https://amirhosseinkarami.ir";
+  const headers = { authorization: `Bearer ${token}` };
   useEffect(() => {
     axios
       .get(url + "/api/UserPanel/GetInviteCode", {
-        headers: { authorization: `Bearer ${token}` },
+        headers: headers,
       })
       .then((res) => setData(res.data));
     axios
       .get(url + "/api/UserPanel/GetNumberOfPeopleInvitedByTheUser", {
-        headers: { authorization: `Bearer ${token}` },
+        headers: headers,
       })
       .then((res) => setUser(res.data));
+    axios
+      .get(url + "/api/UserPanel/GetUserGiftCalculation", {
+        headers: headers,
+      })
+      .then((res) => setGift(res.data));
+    axios
+      .get(url + "/api/UserPanel/GetNumberOfPeopleInvitedByTheUser", {
+        headers: headers,
+      })
+      .then((res) => setInvited(res.data));
   }, []);
 
   return (
@@ -41,9 +54,11 @@ const VideoCover = () => {
           </p>
         </div>
         <div className="middle-clm ">
-          <p>دعوت شده ها : {user}</p>
-          <p>دارای اشتراک:</p>
-          <p>هدیه شما :</p>
+          <p>دعوت شده ها : {user} نفر</p>
+          <p>دارای اشتراک: {invited} نفر</p>
+          <p>
+            هدیه شما: {gift.storyAndCover}استوری و {gift.video} ویدیو
+          </p>
         </div>
         <div className="bottom-clm ">
           <p>کد دعوت: {data}</p>

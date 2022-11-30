@@ -6,6 +6,7 @@ import bascket from "../../assets/Group 8749.png";
 import axios from "axios";
 import { useToken } from "../../auth/useToken/useToken";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const PlanCard = (item) => {
   const { planId, title, videoCount, storyAndCoverCount, descroption, price } =
@@ -13,15 +14,25 @@ const PlanCard = (item) => {
   const [token] = useToken();
   const navigate = useNavigate();
   const buying = () => {
-    axios
-      .post(
-        `https://amirhosseinkarami.ir/api/Order/BuyPlan?planId=${planId}`,
-        {},
-        {
-          headers: { authorization: `Bearer ${token}` },
-        }
-      )
-      .then((res) => window.location.replace(res.data.redirectUrl));
+    if (token) {
+      axios
+        .post(
+          `https://amirhosseinkarami.ir/api/Order/BuyPlan?planId=${planId}`,
+          {},
+          {
+            headers: { authorization: `Bearer ${token}` },
+          }
+        )
+        .then((res) => window.location.replace(res.data.redirectUrl));
+    } else {
+      Swal.fire({
+        position: "center",
+        title: "ابتدا وارد شوید",
+        timer: 1000,
+        icon: "warning",
+        showConfirmButton: false,
+      });
+    }
   };
   return (
     <div className="planCard">

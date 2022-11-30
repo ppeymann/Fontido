@@ -43,13 +43,30 @@ function App() {
             )
           }
         />
-        <Route path="story" element={<Story />} />
-        <Route path="video" element={<Video />} />
+        <Route
+          path="story"
+          element={
+            <UserRoute>
+              <Story />
+            </UserRoute>
+          }
+        />
+        <Route
+          path="video"
+          element={
+            <UserRoute>
+              <Video />
+            </UserRoute>
+          }
+        />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="forgot" element={<ForgotUser />} />
         <Route path="sub" element={<SubPage />} />
-        <Route path={`onlinePayment:redirectParam`} element={<OnlinePay />} />
+        <Route
+          path={`onlinePayment?OrderId&Authority&Status`}
+          element={<OnlinePay />}
+        />
         <Route path="account">
           <Route
             path="user"
