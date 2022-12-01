@@ -20,14 +20,48 @@ const Register = () => {
   const [invite, setInvite] = useState("");
   const [check, setCheck] = useState(false);
 
+  const url = "https://amirhosseinkarami.ir";
+
   const onSignUp = () => {
     try {
       axios
-        .post("https://amirhosseinkarami.ir/api/Account/Register", {
+        .post(url + "/api/Account/Register", {
           name: name,
           mobilePhone: mobilePhone,
           password: password,
           rePassword: rePassword,
+        })
+        .then((res) => {
+          setToken(res.data.token);
+          Swal.fire({
+            position: "top-start",
+            icon: "success",
+            showConfirmButton: false,
+            text: "ثبت نام با موفقیت انجام شد",
+            timer: 1500,
+          });
+          navigate("/account/user");
+        });
+    } catch {
+      Swal.fire({
+        position: "top-start",
+        icon: "error",
+        showConfirmButton: false,
+        text: "دوباره تلاش کنید",
+        timer: 1500,
+      });
+    }
+  };
+
+  const onSignUpInviteCode = () => {
+    try {
+      axios
+        .post(url + "/api/Account/RegisterWithInvite", {
+          name: name,
+          mobilePhone: mobilePhone,
+          password: password,
+          rePassword: rePassword,
+          invitedCode: invite,
         })
         .then((res) => {
           setToken(res.data.token);

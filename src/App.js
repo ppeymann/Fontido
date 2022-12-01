@@ -63,10 +63,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="forgot" element={<ForgotUser />} />
         <Route path="sub" element={<SubPage />} />
-        <Route
-          path={`onlinePayment?OrderId&Authority&Status`}
-          element={<OnlinePay />}
-        />
+        <Route path={`onlinePayment?:`} element={<OnlinePay />} />
         <Route path="account">
           <Route
             path="user"
