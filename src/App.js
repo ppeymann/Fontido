@@ -22,6 +22,7 @@ import { useUser } from "./auth/useUser/useUser";
 import AdminSecu from "./admin/adminSecu/AdminSecu";
 import ForgotUser from "./components/forgotUser/ForgotUser";
 import OnlinePay from "./pages/onlinePayment/OnlinePay";
+import Setting from "./pages/setting/Setting";
 
 function App() {
   const user = useUser();
@@ -94,6 +95,14 @@ function App() {
             element={
               <UserRoute>
                 <Supporting />
+              </UserRoute>
+            }
+          />
+          <Route
+            path="setting"
+            element={
+              <UserRoute>
+                <Setting />
               </UserRoute>
             }
           />
