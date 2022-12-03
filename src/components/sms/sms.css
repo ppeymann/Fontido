@@ -7,6 +7,14 @@
   justify-content: center;
   align-items: flex-start;
 }
+.sms-all {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
 .sms-text {
   width: 60%;
   padding: 1rem;
@@ -28,6 +36,17 @@
 }
 .sms-btn:hover {
   background-color: #0ee830;
+}
+.sms-one {
+  margin-top: 1rem;
+}
+.sms-num {
+  width: 60%;
+  border: 2px solid #e8e8e8;
+  outline: none;
+  font-family: "iranYekan-bold";
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
 }
 @media screen and (max-width: 768px) {
   .sms-container {
