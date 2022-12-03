@@ -23,6 +23,7 @@ import AdminSecu from "./admin/adminSecu/AdminSecu";
 import ForgotUser from "./components/forgotUser/ForgotUser";
 import OnlinePay from "./pages/onlinePayment/OnlinePay";
 import Setting from "./pages/setting/Setting";
+import AdminChange from "./admin/adminChangePass/AdminChange";
 
 function App() {
   const user = useUser();
@@ -44,22 +45,8 @@ function App() {
             )
           }
         />
-        <Route
-          path="story"
-          element={
-            <UserRoute>
-              <Story />
-            </UserRoute>
-          }
-        />
-        <Route
-          path="video"
-          element={
-            <UserRoute>
-              <Video />
-            </UserRoute>
-          }
-        />
+        <Route path="story" element={<Story />} />
+        <Route path="video" element={<Video />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="forgot" element={<ForgotUser />} />
@@ -150,6 +137,7 @@ function App() {
               </AdminRoute>
             }
           />
+          <Route path="adminChangePass" element={<AdminChange />} />
         </Route>
       </Routes>
     </div>
