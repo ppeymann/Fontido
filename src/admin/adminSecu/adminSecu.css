@@ -87,7 +87,7 @@
 }
 .twoStep-code {
   padding: 1rem;
-  background-color: #cacaca;
+  background-color: #37da78;
   border-radius: 10px;
   color: #fff;
   font-family: "iranYekan-bold";
@@ -127,7 +127,7 @@
   .twoStep,
   .twoStep-top,
   .twoStep-down {
-    width: 100%;
+    width: 90%;
     margin-left: 5px;
   }
   .twoStep-down__btn,
