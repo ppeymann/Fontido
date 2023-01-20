@@ -15,29 +15,35 @@ import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/footer/Footer";
 import { Grid } from "@mui/material";
 import { Helmet } from "react-helmet";
+import Loader from "../../components/loader/Loader";
 
 const Account = () => {
   const user = useUser();
   const [token, setToken] = useToken();
   const [data, setData] = useState({});
   const [planData, setPlanData] = useState({});
+  const [loading, setLoading] = useState(false);
   const url = "https://amirhosseinkarami.ir";
   useEffect(() => {
-    const res = axios
+    setLoading(true);
+    axios
       .get(url + "/api/UserPanel/GetUserInformation", {
         headers: { authorization: `Bearer ${token}` },
       })
       .then((res) => {
+        setLoading(false);
+
         setData(res.data);
-        z;
         console.log(res.data);
       });
-    const resp = axios
-      .get(url + "/api/UserPanel/GetUserActivePlan", {
-        headers: { authorization: `Bearer ${token}` },
-      })
-      .then((res) => console.log(res));
+    // const resp = axios
+    //   .get(url + "/api/UserPanel/GetUserActivePlan", {
+    //     headers: { authorization: `Bearer ${token}` },
+    //   })
+    //   .then((res) => console.log(res));
   }, []);
+
+  if (loading) return <Loader />;
 
   return (
     <div className="account">

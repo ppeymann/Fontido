@@ -28,7 +28,9 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="nav-container">
-        <img src={logo} alt="logo" className="navbar-logo" />
+        <Link to="/">
+          <img src={logo} alt="logo" className="navbar-logo" />
+        </Link>
         <h2 className="title">
           <Link to="/">فونتیدو</Link>
         </h2>
