@@ -91,6 +91,9 @@
 .arrow-active {
   display: none;
 }
+.drower {
+  display: none;
+}
 
 @media screen and (max-width: 1100px) {
   .navbar {
@@ -110,6 +113,38 @@
   }
   .hambergur-menu {
     display: block;
+    cursor: pointer;
+  }
+  .drower {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 200px;
+    height: 100vh;
+    z-index: 200;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    transition: 0.3s ease;
+  }
+  .drower-active {
+    left: 0 !important;
+  }
+  .drower-lists {
+    font-family: "iranYekan-medium";
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .close-icone {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    cursor: pointer;
   }
 }
 @media screen and (max-width: 780px) {
@@ -140,12 +175,12 @@
     z-index: 1000;
   }
   .submenu-active {
-    top: 80px;
+    top: 85px;
     font-family: "iranYekan-medium";
     font-size: 0.9rem;
     border-radius: 10px;
     display: block;
-    left: 7px;
+    left: 30px;
     background-color: #f8f8f8;
     padding: 1rem;
     position: absolute;
@@ -164,8 +199,8 @@
   }
   .arrow-active {
     display: block;
-    top: 45px;
-    left: 53px;
+    top: 50px;
+    left: 77px;
     width: 17px;
     padding: 1rem 0;
     position: absolute;

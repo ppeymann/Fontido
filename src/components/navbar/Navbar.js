@@ -5,6 +5,7 @@ import SortIcon from "@mui/icons-material/Sort";
 import { useToken } from "../../auth/useToken/useToken";
 import "./navbar.css";
 import axios from "axios";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 import logo from "../../assets/logo.png";
 import polygon from "../../assets/Polygon 17.png";
@@ -16,6 +17,7 @@ const Navbar = () => {
   const [token] = useToken();
   const [data, setData] = useState({});
   const [show, setShow] = useState(false);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     axios
@@ -119,9 +121,36 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* <div className="hambergur-menu">
+        <div
+          className="hambergur-menu"
+          onClick={() => {
+            setActive(true);
+            setShow(false);
+          }}
+        >
           <SortIcon />
-        </div> */}
+        </div>
+        <div className={`drower ${active ? "drower-active" : ""}`}>
+          <ul className="drower-lists">
+            <ChevronLeftIcon
+              className="close-icone"
+              onClick={() => setActive(false)}
+            />
+            <Link to="/story" className="drower-list">
+              ساخت استوری و کاور
+            </Link>
+            <Link to="/video" className="drower-list">
+              ساخت ویدیو
+            </Link>
+            <Link to="/sub" className="drower-list">
+              تهیه اشتراک
+            </Link>
+            <Link to="/learn" className="drower-list">
+              {" "}
+              آموزش{" "}
+            </Link>
+          </ul>
+        </div>
       </div>
     </div>
   );
